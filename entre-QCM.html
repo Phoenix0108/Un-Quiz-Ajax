@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un QCM</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h1>Créer un QCM</h1>
+            <p class="instruction">Veuillez cliquer sur le bouton radio à côté de la réponse correcte.</p>
+            <label for="question">Question :</label>
+            <input type="text" id="question" name="question" placeholder="Entrez votre question" required>
+
+            <label class="radio-label" for="reponse1">
+                <input type="radio" id="reponse1" name="reponse_correcte" value="reponse1">
+                <span>Réponse 1 :</span>
+            </label>
+            <input type="text" id="reponse1_text" name="reponse1_text" placeholder="Entrez la réponse 1" required>
+
+            <label class="radio-label" for="reponse2">
+                <input type="radio" id="reponse2" name="reponse_correcte" value="reponse2">
+                <span>Réponse 2 :</span>
+            </label>
+            <input type="text" id="reponse2_text" name="reponse2_text" placeholder="Entrez la réponse 2" required>
+
+            <label class="radio-label" for="reponse3">
+                <input type="radio" id="reponse3" name="reponse_correcte" value="reponse3">
+                <span>Réponse 3 :</span>
+            </label>
+            <input type="text" id="reponse3_text" name="reponse3_text" placeholder="Entrez la réponse 3" required>
+
+            <label class="radio-label" for="reponse4">
+                <input type="radio" id="reponse4" name="reponse_correcte" value="reponse4">
+                <span>Réponse 4 :</span>
+            </label>
+            <input type="text" id="reponse4_text" name="reponse4_text" placeholder="Entrez la réponse 4" required>
+
+            <div class="button-group">
+                <button type="button" id="ajouter_question">Ajouter une autre question</button>
+            </div>
+        </form>
+        
+        <button type="submit" class="finish-button">Finir le QCM</button>
+    </div>
+
+</body>
+</html>
