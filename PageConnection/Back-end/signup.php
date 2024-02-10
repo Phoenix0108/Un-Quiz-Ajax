@@ -2,7 +2,7 @@
 // include "db_connect.php";
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
-$nom = htmlspecialchars($_POST["nom"])
+$nom = htmlspecialchars($_POST["nom"]);
 $email = htmlspecialchars($_POST["email"]);
 $password = htmlspecialchars($_POST["password"]);
 /*
@@ -20,6 +20,6 @@ if($request->num_rows === 0){
     $data = ["reponse": "compte déjà existant"];
 }
 */
-$data = ["reponse"=>($nom.$email.$password)];
+$data = ["reponse"=>$nom.$email.$password];
 echo json_encode($data);
 ?>

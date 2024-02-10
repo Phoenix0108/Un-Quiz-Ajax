@@ -21,7 +21,7 @@ $(document).ready(function () {
         $.ajax({
             url: "http://127.0.0.1/signup",
             type: "POST",
-            dataType: "text",
+            dataType: "json",
             data: {
                 "nom": $("#signup_name").val(),
                 "email": $("#signup_email").val(),
@@ -29,9 +29,6 @@ $(document).ready(function () {
             },
             success: function (data) {
                 console.log(data.reponse)
-            },
-            error: function () {
-
             }
         })
     })
