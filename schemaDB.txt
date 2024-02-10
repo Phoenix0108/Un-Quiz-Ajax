@@ -1,0 +1,23 @@
+CREATE DATABASE QUIZZ;
+USE QUIZZ;
+CREATE TABLE utilisateur(
+id int unique not null auto_increment,
+nom varchar(255) not null,
+email varchar(255) not null unique,
+password varchar(255) not null
+);
+CREATE TABLE connection(
+id int unique auto_increment,
+connectid int unique not null,
+userid int unique not null
+);
+CREATE TABLE question(
+iduser int not null,
+idqcm int not null,
+question varchar(255) not null,
+reponse1 varchar(255) not null,
+reponse2 varchar(255) not null,
+reponse3 varchar(255) not null,
+reponse4 varchar(255) not null,
+reponseTrue int not null
+);
