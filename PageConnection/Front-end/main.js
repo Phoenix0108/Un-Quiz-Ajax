@@ -1,19 +1,16 @@
-$(document).ready(function () {
-    now = new Date()
-    now.setTime(now.getTime())
+function setcookieId(id) {
+    now = new Date();
+    time = now.getTime()
+    expireTime = time + 1000 * 600;
+    now.setTime(expireTime)
     console.log(now.toUTCString())
+    document.cookie = 'token=' + id + ';expires=' + now.toUTCString() + ';path=/';
+}
+$(document).ready(function () {
     $(".btnFlexForm").click(function () {
         $(".signup-form").toggle()
         $(".login-form").toggle()
     })
-    function setcookie(id) {
-        now = new Date();
-        time = now.getTime()
-        expireTime = time + 1000 * 600;
-        now.setTime(expireTime)
-        console.log(now.toUTCString())
-        document.cookie = 'connect_id=' + id + ';expires=' + now.toUTCString() + ';path=/';
-    }
     $("#submitLogin").click(function () {
         $.ajax({
             url: "http://127.0.0.1/login",
@@ -25,8 +22,8 @@ $(document).ready(function () {
             },
             success: function (data) {
                 $(".stateCo")[0].innerHTML = data.reponse
-                if (data.connectid != 0) {
-                    setcookie(data.connectid)
+                if (data.token != 0) {
+                    setcookieId(data.token)
                 }
 
             }
@@ -44,8 +41,8 @@ $(document).ready(function () {
             },
             success: function (data) {
                 $(".stateCo")[1].innerHTML = data.reponse
-                if (data.connectid != 0) {
-                    setcookie(data.connectid)
+                if (data.token != 0) {
+                    setcookieId(data.token)
                 }
             }
         })

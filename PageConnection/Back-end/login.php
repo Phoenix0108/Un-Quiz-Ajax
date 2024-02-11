@@ -10,18 +10,18 @@ $request->execute();
 $result = $request->get_result();
 $request->close();
 $reponse = $result->fetch_assoc();
-$data = ["connectid"=>0];
+$data = ["token"=>0];
 if($result->num_rows === 0){
     $data["reponse"]="n'existe pas";
 }elseif($reponse["password"] === $password){
         $data["reponse"]="success";
-        $sql = "INSERT INTO connection(connectid, userid) VALUE(?, ?)";
+        $sql = "UPDATE utilisateur SET token=? WHERE id = ?";
         $request = $db->prepare($sql);
-        $full = $email.$password.date("h-m-s");
-        $request->bind_param("si", $full, $reponse["id"]);
+        $token = bin2hex(random_bytes(32));
+        $request->bind_param("si", $token, $reponse["id"]);
         $request->execute();
         $request->close();
-        $data["connectid"]=$full;
+        $data["token"]=$token;
         $data["reponse"] = "success";
     }else{
         $data["reponse"]="mauvais mot de passe";

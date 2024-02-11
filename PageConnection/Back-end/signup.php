@@ -11,29 +11,17 @@ $request->bind_param("s", $email);
 $request->execute();
 $result = $request->get_result();
 $request->close();
-$data = ["connectid"=>0];
+$data = ["token"=>0];
 if($result->num_rows === 0){
     //ajout de lutilisateur
-    $sql = "INSERT INTO utilisateur(nom, email, password) VALUE(?, ?, ?)";
+    $token = bin2hex(random_bytes(32));
+    $sql = "INSERT INTO utilisateur(nom, email, password, token) VALUE(?, ?, ?, ?)";
     $request = $db->prepare($sql);
-    $request->bind_param("sss", $nom, $email, $password);
-    $request->execute();
-    $request->close();
-    //récupération de son id
-    $request = $db->prepare("SELECT id FROM utilisateur WHERE email = ?");
-    $request->bind_param("s", $email);
-    $request->execute();
-    //création de sa session
-    $result = $request->get_result();
-    $id = $result->fetch_assoc()["id"];
-    $request->close();
-    $request = $db->prepare("INSERT INTO connection(connectid, userid) VALUE(?, ?)");
-    $full = $email.$password.date("h-m-s");
-    $request->bind_param("si", $full,$id);
+    $request->bind_param("ssss", $nom, $email, $password, $token);
     $request->execute();
     $request->close();
     $data["reponse"]= "success";
-    $data["connectid"]=$full;
+    $data["token"]=$token;
 }else{
     $data["reponse"]="compte déjà existant";
 }

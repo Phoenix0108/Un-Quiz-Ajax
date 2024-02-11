@@ -1,24 +1,25 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json");
 $userId = 0;
 $stateCo = false;
-if(isset(htmlspecialchars($_COOKIE["connect_id"]))){
-    $connectionId = htmlspecialchars($_COOKIE["connect_id"])
-    $slq = "SELECT userid FROM connection WHERE connectid = ?";
+if(isset($_COOKIE["token"])){
+    $token = htmlspecialchars($_COOKIE["token"]);
+    $slq = "SELECT * FROM utilisateur WHERE token = ?";
     $request = $db->prepare($sql);
-    $request->bind_param("s", $connectionId);
+    $request->bind_param("s", $token);
     $request->execute();
     $result = $request->get_result();
     $request->close();
     $row = $result->row_nums;
 
     if($row === 0){
-        $data=["stateCo"=>"session non existante"];
+        $data=["stateCo"=>false];
     }else{
-        $data=["stateCo"=>"session existante"];
-        $connectid = $result->fetch_assoc()["userid"];
-        $stateCo = true;
+        $data=["stateCo"=>false, "token"=>$result->fetch_assoc()["token"]];
     }
 }else{
-    $data=["stateCo"=>"session exipiré"];
+    $data=["stateCo"=>false];
 }
+echo json_encode($data);
 ?>
