@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/include/main.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/include/stateCo.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <button id="btnRetour"></button>
+    </nav>
+    <main>
+        <div class="content divQuestion">
+            <span class="question">Quelle est la montagne la plus haute au monde?</span>
+            <div class="divReponse">
+                <div class="part">
+                    <button type="button" id="reponse1" class="reponse" onclick="catchReponse(1)">1- La montagne
+                        pélé</button>
+                    <button type="button" id="reponse1" class="reponse" onclick="catchReponse(2)">2- La montagne
+                        pélé</button>
+                </div>
+                <div class="part">
+                    <button type="button" id="reponse1" class="reponse" onclick="catchReponse(3)">3- La montagne
+                        pélé</button>
+                    <button type="button" id="reponse1" class="reponse" onclick="catchReponse(4)">4- La montagne
+                        pélé</button>
+                </div>
+                <input type="hidden" id="valReponse">
+            </div>
+        </div>
+        <button id="btnValid">Valider</button>
+
+    </main>
+</body>
+
+</html>

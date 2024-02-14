@@ -1,5 +1,5 @@
 <?php
-include "db_connect.php";
+include __DIR__."/../../include/db_connect.php";
 $allowOrigin = "http://localhost";
 header("Access-Control-Allow-Origin: *");
 if(isset($_COOKIE["token"])){
@@ -14,8 +14,9 @@ if(isset($_COOKIE["token"])){
     $request->close();
     if($row_utilisateur === 1){
         //création du qcm
-        $request = $db->prepare("INSERT INTO qcm(id_user) VALUE(?)");
-        $request->bind_param("i", $userid);
+        $nom = $_POST["nom"];
+        $request = $db->prepare("INSERT INTO qcm(id_user, nom) VALUE(?, ?)");
+        $request->bind_param("is", $userid, $nom);
         $request->execute();
         $request->close();
         //récupération de l'ID du qcm

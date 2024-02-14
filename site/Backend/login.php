@@ -11,9 +11,8 @@ $result = $request->get_result();
 $request->close();
 $reponse = $result->fetch_assoc();
 if($result->num_rows === 0){
-    $data = ["reponse"=>"n'existe pas", "check"=>true];
-}elseif($reponse["password"] === $password){
-        $data["reponse"]="success";
+    $data = ["reponse"=>"n'existe pas", "check"=>false];
+}elseif(password_verify($password, $reponse["password"])){
         $sql = "UPDATE utilisateur SET token=? WHERE id = ?";
         $request = $db->prepare($sql);
         $token = bin2hex(random_bytes(32));
@@ -23,7 +22,7 @@ if($result->num_rows === 0){
         setcookie("token", $token, time()+6000, "/");
         $data = ["reponse"=>"success", "check"=>true];  
     }else{
-        $data = ["reponse"=>"mauvais mot de passe", "check"=>true];
+        $data = ["reponse"=>"mauvais mot de passe", "check"=>false];
     }
 
 

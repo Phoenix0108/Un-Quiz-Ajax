@@ -6,21 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'accueil</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/include/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/include/stateCo.js"></script>
     <script src="main.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="title">Bienvenue sur le QCM interractif de AJAX</div>
-        <div class="subtitle">Pour commencer appuyer sur le bouton en dessous pour commencer un QCM</div>
-        <button class="button">Je Commence a repondre</button>
-        <div class="subtitle"><br>pour cree un QCM appuyer en dessous</div>
-        <button class="button" id="btnCreeQcm">Je cree maintenant !</button>
-        <div class="subtitle"><br>Mon historique</div>
-        <button class="button">Je le consulte </button>
-    </div>
+    <nav>
+        <button>Compte</button>
+    </nav>
+    <main>
+        <h2>Bienvenue sur le QCM interractif de AJAX</h2>
+        <div class="container">
+            <div class="divChoix">
+                <span>
+                    Vous pouvez répondre à un QCM grace à son code de partage
+                </span>
+                <button id="btnRecherche">Répondre à un QCM</button>
+            </div>
+            <div class="divChoix">
+                <span>
+                    Créer votre propre QCM pour donner un défis à vos amis
+                </span>
+                <button id="btnAcces">Accéder à mes QCM</button>
+            </div>
+        </div>
+    </main>
+
 </body>
 
 </html>

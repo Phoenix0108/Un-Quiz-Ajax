@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Créer un QCM</title>
+    <link rel="stylesheet" href="/include/main.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/include/stateCo.js"></script>
@@ -12,7 +13,11 @@
 </head>
 
 <body>
+    <nav>
+        <button id="btnRetour"></button>
+    </nav>
     <main>
+        <input type="text" placeholder="Rentrez son nom" id="nom">
         <div class="container">
             <div id="divForm">
                 <div class="navForm">

@@ -1,48 +1,39 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+.container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 5px;
 }
 
-.container {
+@media (width>=520px) {
+    .container {
+        width: 475px;
+    }
+}
+
+@media(width<520px) {
+    .container {
+        width: 200px;
+    }
+}
+
+.divChoix {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    border: 1px solid #ccc;
+    width: 200px;
+    height: 150px;
+    justify-content: space-between;
     border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background-color: #7B84A1;
+    color: #E9F1FA;
+    box-shadow: 0 2px 15px rgba(37, 74, 101, 0.6);
+    transition: all 0.3s ease;
 }
 
-.title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #0056b3;
+.divChoix:hover {
+    height: 160px;
 }

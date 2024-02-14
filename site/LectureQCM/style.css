@@ -1,0 +1,36 @@
+main {
+    min-height: calc(100vh - 70px);
+}
+
+.divQuestion {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.question {
+    text-align: center;
+}
+
+.divReponse {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.part {
+    display: flex;
+    gap: 10px
+}
+
+.part button:active {
+    background-color: #fff;
+}
+
+#btnValid {
+    width: 300px;
+    background-color: green;
+}

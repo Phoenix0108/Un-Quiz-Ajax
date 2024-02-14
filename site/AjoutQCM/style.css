@@ -16,7 +16,7 @@ button {
 }
 
 main {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
 }
@@ -36,7 +36,6 @@ main {
 }
 
 form {
-
     padding: 20px;
 }
 
@@ -59,8 +58,7 @@ form {
     background-size: 100%;
 }
 
-.Avant {
-
+.Apres {
     transform: rotate(180deg);
 }
 

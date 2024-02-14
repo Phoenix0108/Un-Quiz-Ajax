@@ -5,7 +5,6 @@ $.ajax({
     success: function (data) {
         if (data.stateCo) {
         } else {
-            window.location.href = "http://127.0.0.1"
         }
     }
 })

@@ -1,5 +1,8 @@
 $(document).ready(function () {
-    $("#btnCreeQcm").click(function () {
-        window.location.href = "http://127.0.0.1/AjoutQCM/AjoutQCM.html"
+    $("#btnRecherche").click(function () {
+        window.location.href = "../RechercheQCM/recheche.html"
+    })
+    $("#btnAcces").click(function () {
+        window.location.href = "../MesQCM/mesqcm.html"
     })
 })

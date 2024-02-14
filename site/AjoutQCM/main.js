@@ -1,6 +1,9 @@
 selection = 0
 navForm = true
 $(document).ready(function () {
+    $("#btnRetour").click(function () {
+        window.location.href = "../MesQCM/mesqcm.html"
+    })
     function newQCM() {
         $.ajax({
             url: "http://127.0.0.1/AjoutQCM/Backend/ajoutQCM",
@@ -68,13 +71,15 @@ $(document).ready(function () {
         if (comforme) {
             console.log(qcm)
             $.ajax({
-                url: "http://127.0.0.1/SaveQuestion",
+                url: "http://127.0.0.1/AjoutQCM/Backend/SaveQuestion",
                 type: "POST",
                 dataType: "json",
                 data: {
-                    "data": qcm
+                    "data": qcm,
+                    "nom": $("#nom").val()
                 },
                 success: function () {
+                    window.location.href = "../MesQCM/mesqcm.html"
                 },
                 error: function () {
 
