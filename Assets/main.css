@@ -1,0 +1,150 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d9d9d9;
+    padding: 10px
+}
+
+nav {
+    width: 100%;
+    height: 40px;
+}
+
+main {
+    min-height: calc(100vh - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px
+}
+
+main.withNav {
+    min-height: calc(100vh - 60px);
+}
+
+.widthScreen {
+    max-width: 400px;
+}
+
+.title {
+    width: 100%;
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+}
+
+button {
+    padding: 10px;
+    color: #E9F1FA;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%
+}
+
+#btnRetour,
+.nav-fleche button {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(216, 215, 215);
+    border: 5px solid rgb(217, 216, 216);
+}
+
+.nav-fleche button:hover,
+#btnRetour:hover {
+    background-color: rgb(179, 178, 178);
+    border-color: rgb(179, 178, 178);
+}
+
+#btnRetour {
+    background-image: url("/Assets/Icon-RETOUR.png");
+}
+
+.nav-fleche button {
+    background-image: url("/Assets/fleche.png");
+}
+
+#Avant {
+    transform: rotate(180deg);
+}
+
+.blue {
+    background-color: #0076e4;
+}
+
+.blue:hover {
+    background-color: rgb(0, 70, 160);
+}
+
+.green {
+    background-color: rgb(3, 194, 3);
+}
+
+.green:hover {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.red:hover {
+    background-color: rgb(156, 0, 0);
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.Row {
+    display: flex;
+    gap: 15px;
+}
+
+.Column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+}
+
+.sp_btw {
+    justify-content: space-between;
+}
+
+.cInput {
+    gap: 2px
+}
+
+.cInput input {}
+
+.container {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 6px 6px 10px 1px rgba(0, 98, 125, 0.5);
+    max-width: 300px;
+}
+
+.none {
+    display: none;
+}
+
+.divBtnChoix {
+    flex-wrap: wrap;
+}
+
+.choix {
+    display: inline-flex;
+    flex-basis: calc(50% - 10px);
+}

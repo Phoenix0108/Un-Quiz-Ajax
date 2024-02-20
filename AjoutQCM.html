@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un QCM</title>
+    <link rel="stylesheet" href="/Assets/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/include/stateCo.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <nav>
+        <button id="btnRetour"></button>
+    </nav>
+    <main class="withNav">
+        <h1>Créer un QCM</h1>
+        <div id="divNom">
+            <input type="text" placeholder="Rentrez le titre" id="nom">
+            <div id="ligneNom"></div>
+        </div>
+        <div class="Column">
+            <div id="divForm" class="Column container">
+                <div class="Row sp_btw">
+                    <span class="compte1"></span>
+                    <div class="Row nav-fleche">
+                        <button id="Avant"></button>
+                        <button id="Apres"></button>
+                    </div>
+                </div>
+                <form class="form Column">
+                    <p class="instruction">Veuillez cliquer sur le bouton radio à côté de la réponse correcte.</p>
+                    <div class="Column cInput">
+                        <label for="question">Question :</label>
+                        <input type="text" class="question" name="question" placeholder="Entrez votre question"
+                            required>
+                    </div>
+                    <div class="Column cInput">
+                        <div class="Row">
+                            <input type="radio" class="radio1" id="r1" value="1">
+                            <label for="r1">Réponse 1 :</label>
+                        </div>
+                        <input type="text" class="reponse1" placeholder="Entrez la réponse 1" required>
+                    </div>
+                    <div class="Column cInput">
+                        <div class="Row">
+                            <input type="radio" class="radio2" id="r2" value="2">
+                            <label for="r2">Reponse 2:</label>
+                        </div>
+                        <input type="text" class="reponse2" placeholder="Entrez la réponse 2" required>
+                    </div>
+                    <div class="Column cInput">
+                        <div class="Row">
+                            <input type="radio" class="radio3" id="r3" value="3">
+                            <label for="r2">Reponse 3:</label>
+                        </div>
+                        <input type="text" class="reponse2" placeholder="Entrez la réponse 3" required>
+                    </div>
+                    <div class="Column cInput">
+                        <div class="Row">
+                            <input type="radio" class="radio4" id="r4" value="4">
+                            <label for="r4">Reponse 4:</label>
+                        </div>
+                        <input type="text" class="reponse4" placeholder="Entrez la réponse 4" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="blue">Ajouter une autre question</button>
+                    </div>
+                </form>
+            </div>
+            <span id="error" class="none">Un champ est incorrect</span>
+            <button type="submit" class="green" id="enregistrer">Finir le QCM</button>
+        </div>
+    </main>
+</body>
+
+</html>

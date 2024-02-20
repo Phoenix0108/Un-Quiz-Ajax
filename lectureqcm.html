@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Assets/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/include/stateCo.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <nav>
+        <button id="btnRetour"></button>
+    </nav>
+    <main class="withNav">
+        <div id="divQcm" class="Column">
+            <span id="indexQuestion">N° de la question 1/4</span>
+            <div class="container Column">
+                <span class="title question">La question est ...?</span>
+                <div class="Row divBtnChoix">
+                    <button type="button" class="blue choix" onclick="catchReponse(1)">
+                        Choix numéro 1
+                    </button>
+                    <button type="button" class="blue choix" onclick="catchReponse(2)">
+                        Choix numéro 2
+                    </button>
+                    <button type="button" class="blue choix" onclick="catchReponse(3)">
+                        Choix numéro 3
+                    </button>
+                    <button type="button" class="blue choix" onclick="catchReponse(4)">
+                        Choix numéro 4
+                    </button>
+                </div>
+                <input type="hidden" id="valChoix">
+            </div>
+            <span id="trueReponse"></span>
+            <button id="btnValid" class="green">Valider</button>
+            <button id="btnSuivant" class="blue none">Suivant</button>
+            <button id="btnResultat" class="blue none">Afficher les résultats</button>
+        </div>
+        <div id="divResultat" class="none">
+            <div class="content">
+                <span id="score">Votre Score est de 8/20</span>
+            </div>
+            <button id="retourAcceuil">Retour à l'acceuil</button>
+        </div>
+
+    </main>
+</body>
+
+</html>

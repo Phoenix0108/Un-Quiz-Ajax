@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Assets/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="/include/stateCo.js"></script>
+</head>
+
+<body>
+    <nav>
+        <button id="btnRetour"></button>
+    </nav>
+
+    <main class="withNav Column">
+        <h2>Mes QCM</h2>
+        <div id="contentQCM">
+            <div class="Column cInput container">
+                <span>Titre</span>
+                <span>Nombre de question : 3</span>
+                <span>Code de partage : #221</span>
+                <div class="Row">
+                    <button onclick="lance(221)" class="blue">Lancez</button>
+                    <button onclick="supp(221)" class="red">Supprimer</button>
+                </div>
+            </div>
+        </div>
+        <button id="ajoutQcm" class="blue">Ajouter un QMC</button>
+    </main>
+</body>
+
+</html>
