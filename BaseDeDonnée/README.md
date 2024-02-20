@@ -1,31 +1,59 @@
-## Tables Créées
-1. **Utilisateur (User):**
-   - UserID (Clé primaire)
-   - Nom d'utilisateur
-   - Email
-   - Mot de passe (haché)
+# Système de Quizz - Schéma de Base de Données
 
-2. **QCM:**
-   - QCMID (Clé primaire)
-   - Titre
-   - Code d'accès (peut être généré automatiquement)
-   - UserID (Clé étrangère faisant référence à la table Utilisateur pour savoir quel utilisateur a créé ce QCM)
-   - Évaluation activée (Booléen indiquant si l'évaluation est activée ou non)
+Ce projet implémente un système de quizz avec une base de données MySQL. Le schéma de la base de données est décrit ci-dessous.
 
-3. **Question:**
-   - QuestionID (Clé primaire)
-   - Texte de la question
-   - QCMID (Clé étrangère faisant référence à la table QCM à laquelle cette question appartient)
+## Structure de la Base de Données
 
-4. **Reponse:**
-   - ReponseID (Clé primaire)
-   - Texte de la réponse
-   - EstCorrecte (Booléen indiquant si la réponse est correcte ou non)
-   - QuestionID (Clé étrangère faisant référence à la table Question à laquelle cette réponse appartient)
+### Table Utilisateur
 
-5. **NoteUtilisateurQCM:**
-   - NoteID (Clé primaire)
-   - UserID (Clé étrangère faisant référence à la table Utilisateur pour savoir quel utilisateur a répondu au QCM)
-   - QCMID (Clé étrangère faisant référence à la table QCM pour savoir à quel QCM cette note appartient)
-   - Note (La note attribuée à l'utilisateur pour ce QCM)
+- `id` : Clé primaire auto-incrémentée.
+- `nom` : Nom de l'utilisateur.
+- `email` : Adresse e-mail de l'utilisateur (unique).
+- `password` : Mot de passe haché de l'utilisateur.
+- `token` : Jeton pour des fonctionnalités de sécurité supplémentaires.
 
+### Table Question
+
+- `id` : Clé primaire auto-incrémentée.
+- `idqcm` : Clé étrangère faisant référence à l'identifiant du QCM auquel la question appartient.
+- `question` : Texte de la question.
+- `reponse1`, `reponse2`, `reponse3`, `reponse4` : Texte des options de réponse.
+- `reponseTrue` : Indicateur (0 ou 1) indiquant quelle réponse est correcte.
+
+### Table QCM
+
+- `id` : Clé primaire auto-incrémentée.
+- `id_user` : Clé étrangère faisant référence à l'identifiant de l'utilisateur qui a créé le QCM.
+- `nom` : Nom du QCM.
+
+## Instructions pour la Création de la Base de Données
+
+1. Créez une base de données nommée `QUIZZ`.
+2. Utilisez la base de données `QUIZZ`.
+3. Exécutez les requêtes SQL suivantes pour créer les tables nécessaires :
+
+```sql
+CREATE TABLE utilisateur (
+  id int primary key unique not null auto_increment,
+  nom varchar(255) not null,
+  email varchar(255) not null unique,
+  password varchar(255) not null,
+  token varchar(255)
+);
+
+CREATE TABLE question (
+  id int primary key unique not null auto_increment,
+  idqcm int not null,
+  question varchar(255) not null,
+  reponse1 varchar(255) not null,
+  reponse2 varchar(255) not null,
+  reponse3 varchar(255) not null,
+  reponse4 varchar(255) not null,
+  reponseTrue int not null
+);
+
+CREATE TABLE qcm (
+  id int primary key not null unique auto_increment,
+  id_user int not null,
+  nom varchar(255) not null
+);
