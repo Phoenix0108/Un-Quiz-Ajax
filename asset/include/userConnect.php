@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $motDePasse = $_POST["mot_de_passe"];
 
 
-    $requete = "SELECT * FROM Utilisateur WHERE NomUtilisateur = '$nomUtilisateur' AND MotDePasse = '$motDePasse'";
+    $requete = "SELECT * FROM utilisateur WHERE NomUtilisateur = '$nomUtilisateur' AND MotDePasse = '$motDePasse'";
     $resultat = mysqli_query($connexion, $requete);
 
     if ($resultat) {
