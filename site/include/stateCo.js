@@ -4,7 +4,9 @@ $.ajax({
     dataType: "json",
     success: function (data) {
         if (data.stateCo) {
+
         } else {
+            window.location.href = "/"
         }
     }
 })

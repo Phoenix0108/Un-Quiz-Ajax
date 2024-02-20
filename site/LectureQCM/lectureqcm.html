@@ -18,25 +18,37 @@
         <button id="btnRetour"></button>
     </nav>
     <main>
-        <div class="content divQuestion">
-            <span class="question">Quelle est la montagne la plus haute au monde?</span>
-            <div class="divReponse">
-                <div class="part">
-                    <button type="button" id="reponse1" class="reponse" onclick="catchReponse(1)">1- La montagne
-                        pélé</button>
-                    <button type="button" id="reponse1" class="reponse" onclick="catchReponse(2)">2- La montagne
-                        pélé</button>
+        <div id="divQcm">
+            <span id="indexQuestion">N° de la question 1/4</span>
+            <div class="content Qcm">
+                <span class="question">La question est ...?</span>
+                <div class="divBtnChoix">
+                    <button type="button" class="choix" onclick="catchReponse(1)">
+                        Choix numéro 1
+                    </button>
+                    <button type="button" class="choix" onclick="catchReponse(2)">
+                        Choix numéro 2
+                    </button>
+                    <button type="button" class="choix" onclick="catchReponse(3)">
+                        Choix numéro 3
+                    </button>
+                    <button type="button" class="choix" onclick="catchReponse(4)">
+                        Choix numéro 4
+                    </button>
                 </div>
-                <div class="part">
-                    <button type="button" id="reponse1" class="reponse" onclick="catchReponse(3)">3- La montagne
-                        pélé</button>
-                    <button type="button" id="reponse1" class="reponse" onclick="catchReponse(4)">4- La montagne
-                        pélé</button>
-                </div>
-                <input type="hidden" id="valReponse">
+                <input type="hidden" id="valChoix">
             </div>
+            <span id="trueReponse"></span>
+            <button id="btnValid">Valider</button>
+            <button id="btnSuivant">Suivant</button>
+            <button id="btnResultat">Afficher les résultats</button>
         </div>
-        <button id="btnValid">Valider</button>
+        <div id="divResultat">
+            <div class="content">
+                <span id="score">Votre Score est de 8/20</span>
+            </div>
+            <button id="retourAcceuil">Retour à l'acceuil</button>
+        </div>
 
     </main>
 </body>

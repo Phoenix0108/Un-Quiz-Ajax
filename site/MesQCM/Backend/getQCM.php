@@ -34,7 +34,7 @@ if(isset($_COOKIE["token"])){
             <span>Code de partage : #'.($var["id"]).'</span>
             <br><br>
             <button onclick="lance('.($var["id"]).')">Lancez</button>
-            <button>Supprimer</button>
+            <button onclick=supp('.($var["id"]).')>Supprimer</button>
             </div>';
         }
     }

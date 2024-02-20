@@ -4,7 +4,6 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: text/html");
 $numPage = htmlspecialchars($_POST["numPage"]);
 $reponse = '<form class="form">
-<h1>Créer un QCM</h1>
 <p class="instruction">Veuillez cliquer sur le bouton radio à côté de la réponse correcte.</p>
 <label for="question">Question :</label>
 <input type="text" class="question" name="question" placeholder="Entrez votre question" required>

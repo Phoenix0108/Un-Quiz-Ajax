@@ -47,7 +47,8 @@ $(document).ready(function () {
     $(".btnAdd").click(newQCM)
     $("#enregistrer").click(function () {
         qcm = {}
-        comforme = true
+        nom = $("#nom").val()
+        conforme = true
         for (i = 0; i < $("form").length; i++) {
             question = $(".question")[i].value
             reponse1 = $(".reponse1")[i].value
@@ -62,13 +63,18 @@ $(document).ready(function () {
                     radio = $(inputRadio)[j].value
                 }
             }
-            if (question != "" && reponse1 != "" && reponse2 != "" && reponse3 != "" && reponse4 != "" && (0 < radio < 5)) {
+            if (question != "" && reponse1 != "" && reponse2 != "" && reponse3 != "" && reponse4 != "" && (0 < radio && radio < 5)) {
                 qcm[question] = [reponse1, reponse2, reponse3, reponse4, radio]
             } else {
                 conforme = false
+                $("#error").show()
+                setTimeout(function () {
+                    $("#error").hide()
+                }, 2000)
+                break
             }
         }
-        if (comforme) {
+        if (conforme) {
             console.log(qcm)
             $.ajax({
                 url: "http://127.0.0.1/AjoutQCM/Backend/SaveQuestion",
@@ -76,7 +82,7 @@ $(document).ready(function () {
                 dataType: "json",
                 data: {
                     "data": qcm,
-                    "nom": $("#nom").val()
+                    "nom": nom
                 },
                 success: function () {
                     window.location.href = "../MesQCM/mesqcm.html"
