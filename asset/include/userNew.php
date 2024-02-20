@@ -5,10 +5,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $motDePasse = $_POST["mot_de_passe"];
 
-    $verificationNomUtilisateur = "SELECT * FROM Utilisateur WHERE NomUtilisateur = '$nomUtilisateur'";
+    $verificationNomUtilisateur = "SELECT * FROM utilisateur WHERE NomUtilisateur = '$nomUtilisateur'";
     $resultatNomUtilisateur = mysqli_query($connexion, $verificationNomUtilisateur);
 
-    $verificationEmail = "SELECT * FROM Utilisateur WHERE Email = '$email'";
+    $verificationEmail = "SELECT * FROM utilisateur WHERE Email = '$email'";
     $resultatEmail = mysqli_query($connexion, $verificationEmail);
 
     if (mysqli_num_rows($resultatNomUtilisateur) > 0) {
