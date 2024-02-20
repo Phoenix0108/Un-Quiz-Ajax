@@ -1,0 +1,72 @@
+main {
+    min-height: calc(100vh - 70px);
+    margin: 0 auto 0 auto;
+    gap: 10px
+}
+
+#divQcm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#indexQuestion {
+    align-self: flex-start;
+}
+
+.Qcm {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 10px;
+    align-items: center;
+}
+
+#divResultat {
+    display: none;
+}
+
+.question {
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.choix {
+    display: inline-flex;
+    flex-basis: calc(50% - 5px);
+    text-align: start;
+}
+
+.divBtnChoix {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.part button:active {
+    background-color: #fff;
+}
+
+#btnValid {
+    width: 100%;
+    background-color: rgb(33, 163, 33);
+}
+
+#btnValid:hover {
+    background-color: rgb(23, 120, 23);
+}
+
+#btnValid:active {
+    background-color: rgb(33, 163, 33);
+}
+
+#btnSuivant {
+    width: 100%;
+    display: none;
+}
+
+#btnResultat {
+    width: 100%;
+    display: none;
+}
