@@ -7,8 +7,9 @@
     <title>Créer un QCM</title>
     <link rel="stylesheet" href="/Assets/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="/include/stateCo.js"></script>
-    <script src="main.js"></script>
+    <script src="redirectAjoutQCM.js"></script>
+    <script src="getFormQCM.js"></script>
+    <script src="pushQCM.js"></script>
 </head>
 
 <body>
@@ -66,12 +67,12 @@
                         <input type="text" class="reponse4" placeholder="Entrez la réponse 4" required>
                     </div>
                     <div class="button-group">
-                        <button type="button" class="blue">Ajouter une autre question</button>
+                        <button type="button" class="blue" id="getFormQCM">Ajouter une autre question</button>
                     </div>
                 </form>
             </div>
             <span id="error" class="none">Un champ est incorrect</span>
-            <button type="submit" class="green" id="enregistrer">Finir le QCM</button>
+            <button type="button" class="green" id="enregistrer">Finir le QCM</button>
         </div>
     </main>
 </body>

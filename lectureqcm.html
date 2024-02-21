@@ -7,8 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="/Assets/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="/include/stateCo.js"></script>
-    <script src="main.js"></script>
+    <script src="lectureqcm.js"></script>
+    <script src="redirectLecture.js"></script>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
         <div id="divQcm" class="Column">
             <span id="indexQuestion">N° de la question 1/4</span>
             <div class="container Column">
-                <span class="title question">La question est ...?</span>
+                <span class="title" id="question">La question est ...?</span>
                 <div class="Row divBtnChoix">
                     <button type="button" class="blue choix" onclick="catchReponse(1)">
                         Choix numéro 1

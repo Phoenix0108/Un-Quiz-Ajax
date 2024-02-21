@@ -7,17 +7,8 @@
     <title>Connexion / Création de compte</title>
     <link rel="stylesheet" href="/Assets/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!--<script>$.ajax({
-            url: "http://127.0.0.1/include/verifCo",
-            type: "POST",
-            dataType: "json",
-            success: function (data) {
-                if (data.stateCo) {
-                    window.location.href = "http://127.0.0.1/Acceuil/acceuil.html"
-                }
-            }
-        })</script>-->
-    <script src="main.js"></script>
+    <script src="login.js"></script>
+    <script src="signup.js"></script>
 </head>
 
 <body>
@@ -33,7 +24,7 @@
                 <input type="password" id="login_password" name="login_password" required>
             </div>
             <span class="stateCo"></span>
-            <button type="button" id="submitLogin" class="green">Connection</button>
+            <input type="submit" id="submitLogin" class="green" value="Connection">
             <button type="button" id="swicthSignup" class="blue">Créer un compte</button>
         </form>
 
@@ -52,7 +43,7 @@
                 <input type="password" id="signup_password" required>
             </div>
             <span class="stateCo"></span>
-            <button type="button" id="submitSignup" class="blue">S'enregistrer</button>
+            <input type="submit" id="submitSignup" class="blue" value="S'enregistrer">
             <button type="button" id="btnFlexForm" class="green">Se connecter</button>
         </form>
     </main>
