@@ -1,4 +1,4 @@
-document.ready(function () {
+$(document).ready(function () {
     $("#login-form").submit(function (event) {
         event.preventDefault(); //  J’empêche la page de reaload comme c’est normalement le cas sur un submit
 

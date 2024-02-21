@@ -37,7 +37,8 @@ main.withNav {
     justify-content: center;
 }
 
-button {
+button,
+input[type="submit"] {
     padding: 10px;
     color: #E9F1FA;
     border: none;

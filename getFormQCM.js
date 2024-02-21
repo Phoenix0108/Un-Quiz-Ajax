@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    indexForm = 0
+    function changeForm(num) {
+        nbrForm = $(".form").length;
+        $(".form").hide();
+
+    }
     $("#getFormQCM").click(function () {
         nbrFormQCM = $(".form").length;
         $.ajax({
