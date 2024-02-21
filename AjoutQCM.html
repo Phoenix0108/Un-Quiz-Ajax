@@ -10,6 +10,7 @@
     <script src="redirectAjoutQCM.js"></script>
     <script src="getFormQCM.js"></script>
     <script src="pushQCM.js"></script>
+    <script src="navAjoutQCM.js"></script>
 </head>
 
 <body>
@@ -22,15 +23,15 @@
             <input type="text" placeholder="Rentrez le titre" id="nom">
             <div id="ligneNom"></div>
         </div>
-        <div class="Column">
-            <div id="divForm" class="Column container">
-                <div class="Row sp_btw">
-                    <span class="compte1"></span>
-                    <div class="Row nav-fleche">
-                        <button id="Avant"></button>
-                        <button id="Apres"></button>
-                    </div>
+        <div class="Column container">
+            <div class="Row sp_btw">
+                <span id="compte"></span>
+                <div class="Row nav-fleche">
+                    <button id="Avant"></button>
+                    <button id="Apres"></button>
                 </div>
+            </div>
+            <div id="divForm" class="Column">
                 <form class="form Column">
                     <p class="instruction">Veuillez cliquer sur le bouton radio à côté de la réponse correcte.</p>
                     <div class="Column cInput">
@@ -66,14 +67,12 @@
                         </div>
                         <input type="text" class="reponse4" placeholder="Entrez la réponse 4" required>
                     </div>
-                    <div class="button-group">
-                        <button type="button" class="blue" id="getFormQCM">Ajouter une autre question</button>
-                    </div>
                 </form>
             </div>
-            <span id="error" class="none">Un champ est incorrect</span>
-            <button type="button" class="green" id="enregistrer">Finir le QCM</button>
+            <button type="button" class="blue" id="getFormQCM">Ajouter une autre question</button>
         </div>
+        <span id="error" class="none">Un champ est incorrect</span>
+        <button type="button" class="green" id="enregistrer">Finir le QCM</button>
     </main>
 </body>
 

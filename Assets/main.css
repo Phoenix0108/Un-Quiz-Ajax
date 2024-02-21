@@ -123,11 +123,14 @@ input {
     justify-content: space-between;
 }
 
+.start {
+    justify-content: flex-start;
+    width: auto
+}
+
 .cInput {
     gap: 2px
 }
-
-.cInput input {}
 
 .container {
     padding: 10px;
@@ -148,4 +151,8 @@ input {
 .choix {
     display: inline-flex;
     flex-basis: calc(50% - 10px);
+}
+
+#error {
+    color: red;
 }

@@ -6,11 +6,12 @@ $(document).ready(function () {
         return 0 < rad && rad < 5;
     }
     $("#enregistrer").click(function () {
-        conforme = true;
+        conforme = false;
         qcm = {};
         nbrForm = $(".form").length;
-        nom = $("#nom")[0].value
+        nom = $("#nom")[0].value;
         if (nbrForm > 0 && notEmpty(nom)) {
+            conforme = true;
             for (i = 0; i < nbrForm; i++) {
                 question = $(".question")[i].value;
                 reponse1 = $(".reponse1")[i].value;
@@ -33,22 +34,27 @@ $(document).ready(function () {
                     break;
                 }
             }
-            if (conforme) {
-                $.ajax({
-                    url: "http://127.0.0.1/pushQCM",
-                    type: "POST",
-                    dataType: "json",
-                    data: {
-                        "qcm": qcm,
-                        "nom": nom
-                    },
-                    success: function (reponse) {
-                        if (reponse.state) {
-                            window.location.href = "verifQCM.html";
-                        }
+        }
+        if (conforme) {
+            $.ajax({
+                url: "http://127.0.0.1/pushQCM",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "qcm": qcm,
+                    "nom": nom
+                },
+                success: function (reponse) {
+                    if (reponse.state) {
+                        window.location.href = "verifQCM.html";
                     }
-                })
-            }
+                }
+            })
+        } else {
+            $("#error").show();
+            setTimeout(() => {
+                $("#error").hide();
+            }, 2000)
         }
     })
 
