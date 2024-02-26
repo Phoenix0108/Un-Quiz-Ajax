@@ -7,8 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="/Assets/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="lectureqcm.js"></script>
-    <script src="redirectLecture.js"></script>
+    <script src="/JS/lectureQCM/lectureqcm.js"></script>
+    <script src="/JS/lectureQCM/pushReponse.js"></script>
+    <script src="/JS/lectureQCM/getQuestion.js"></script>
+    <script src="/JS/redirect/lectureQCM.js"></script>
 </head>
 
 <body>
@@ -34,10 +36,10 @@
                         Choix numéro 4
                     </button>
                 </div>
-                <input type="hidden" id="valChoix">
+                <input type="hidden" id="valChoix" value="0">
             </div>
             <span id="trueReponse"></span>
-            <button id="btnValid" class="green">Valider</button>
+            <button id="btnValid" class="notAllowed">Valider</button>
             <button id="btnSuivant" class="blue none">Suivant</button>
             <button id="btnResultat" class="blue none">Afficher les résultats</button>
         </div>

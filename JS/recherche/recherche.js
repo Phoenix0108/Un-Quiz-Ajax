@@ -13,6 +13,14 @@ $(document).ready(function () {
                 } else {
                     $("#resultat").html('<h3 class="title">Aucun Résultat</h3>')
                 }
+            },
+            error: function (xhr) {
+                if (xhr.status == 0) {
+                    console.log("Serveur introuvable");
+                }
+                if (xhr.status === 404) {
+                    console.log("Contenue introuvable")
+                }
             }
         })
     })

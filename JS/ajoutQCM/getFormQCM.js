@@ -10,6 +10,14 @@ $(document).ready(function () {
                 if (reponse.state) {
                     $("#divForm").append(reponse.data);
                 }
+            },
+            error: function (xhr) {
+                if (xhr.status == 0) {
+                    console.log("Serveur introuvable");
+                }
+                if (xhr.status === 404) {
+                    console.log("Contenue introuvable")
+                }
             }
         });
     });

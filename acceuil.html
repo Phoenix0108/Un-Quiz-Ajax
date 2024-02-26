@@ -7,17 +7,17 @@
     <title>Page d'accueil</title>
     <link rel="stylesheet" href="/Assets/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="redirectAcceuil.js"></script>
+    <script src="/JS/redirect/acceuil.js"></script>
 </head>
 
 <body>
     <nav class="Row">
-        <button type="button" class="blue" id="btnCompte">Compte</button>
+        <button type="button" class="blue" id="btnCompte">Mon Compte</button>
     </nav>
     <main class="withNav">
         <div class="widthScreen">
             <h2>Bienvenue sur le QCM interractif de AJAX</h2>
-            <div class="Row">
+            <div class="Row contentAcceuil">
                 <div class="Column container sp_btw">
                     <span>
                         Vous pouvez répondre à un QCM grace à son code de partage
@@ -29,6 +29,12 @@
                         Créer votre propre QCM pour donner un défis à vos amis
                     </span>
                     <button id="btnAccess" class="blue">Accéder à mes QCM</button>
+                </div>
+                <div class="Column container sp_btw">
+                    <span>
+                        Consulter vos notes ou reprendre un QCM en cours
+                    </span>
+                    <button id="btnHistorique" class="blue">Mon historique</button>
                 </div>
             </div>
         </div>

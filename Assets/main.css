@@ -5,7 +5,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #d9d9d9;
-    padding: 10px
+    padding: 10px;
 }
 
 nav {
@@ -26,8 +26,17 @@ main.withNav {
     min-height: calc(100vh - 60px);
 }
 
+main.withRecherche {
+    min-height: calc(100vh - 100px);
+}
+
 .widthScreen {
     max-width: 400px;
+}
+
+.contentAcceuil {
+    flex-wrap: wrap;
+    flex-basis: 5%;
 }
 
 .title {
@@ -60,6 +69,11 @@ input[type="submit"] {
     border: 5px solid rgb(217, 216, 216);
 }
 
+.comble_btnRetour {
+    width: 30px;
+    height: 30px;
+}
+
 .nav-fleche button:hover,
 #btnRetour:hover {
     background-color: rgb(179, 178, 178);
@@ -68,6 +82,10 @@ input[type="submit"] {
 
 #btnRetour {
     background-image: url("/Assets/Icon-RETOUR.png");
+}
+
+#recherche {
+    width: 400px
 }
 
 .nav-fleche button {
@@ -102,6 +120,11 @@ input[type="submit"] {
     background-color: rgb(156, 0, 0);
 }
 
+.notAllowed {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
 input {
     padding: 10px;
     border-radius: 5px;
@@ -111,6 +134,7 @@ input {
 .Row {
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
 .Column {
@@ -128,6 +152,13 @@ input {
     width: auto
 }
 
+.end {
+    justify-content: flex-end;
+    width: auto;
+    color: grey;
+    font-size: 13px;
+}
+
 .cInput {
     gap: 2px
 }
@@ -138,6 +169,28 @@ input {
     border-radius: 5px;
     box-shadow: 6px 6px 10px 1px rgba(0, 98, 125, 0.5);
     max-width: 300px;
+}
+
+.historique {
+    width: 300px;
+}
+
+.note {
+    font-weight: 600;
+    padding: 4px;
+    background-color: rgba(38, 0, 255, 0.619);
+    border-radius: 5px;
+    color: rgb(227, 244, 255)
+}
+
+.enCours {
+    font-weight: 700;
+    color: rgb(0, 132, 0);
+}
+
+.terminer {
+    font-weight: 700;
+    color: rgb(0, 95, 132)
 }
 
 .none {
@@ -155,4 +208,10 @@ input {
 
 #error {
     color: red;
+}
+
+@media (width < 350px) {
+    .historique {
+        width: calc(100% - 20px);
+    }
 }

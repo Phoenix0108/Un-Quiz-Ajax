@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/JS/redirect/historique.js"></script>
+    <script src="/JS/historique/getHistorique.js"></script>
+    <script src="/JS/historique/reprendreQCM.js"></script>
+    <script src="/JS/historique/supQCM.js"></script>
+    <link rel="stylesheet" href="Assets/main.css">
+</head>
+
+<body>
+    <nav class="Row sp_btw">
+        <button id="btnRetour"></button>
+        <h2 class="title">Mon historique</h2>
+        <div class="comble_btnRetour"></div>
+    </nav>
+    <main class="withNav">
+        <div class="container Column historique">
+            <div class="Row sp_btw">
+                <div>
+                    <h3 class="title">Athèle</h3>
+                </div>
+                <span class="note">Note 18/20</span>
+            </div>
+            <div class="Column cInput">
+                <span>Code de partage : #29</span>
+                <span class="terminer">Terminer</span>
+            </div>
+            <div class="Row end">
+                <span>Date : 12/01/2024</span>
+            </div>
+            <button class="red" onclick="supQCM()">Supprimer</button>
+        </div>
+        <div class="container Column historique">
+            <div class="Row sp_btw">
+                <div>
+                    <h3 class="title">Athèle</h3>
+                </div>
+                <span class="note">Question restante:18/20</span>
+            </div>
+            <div class="Column cInput">
+                <span>Code de partage : #29</span>
+                <span class="enCours">En cours</span>
+            </div>
+            <div class="Row end">
+                <span>Date : 12/01/2024</span>
+            </div>
+            <div class="Row">
+                <button class="green" onclick="reprendreQCM()">Reprendre</button>
+                <button class="red" onclick="supQCM()">Supprimer</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

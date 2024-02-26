@@ -8,4 +8,7 @@ $(document).ready(function () {
     $("#btnCompte").click(function () {
         window.location.href = "compte.html"
     })
+    $("#btnHistorique").click(function () {
+        window.location.href = "historique.html"
+    })
 })
