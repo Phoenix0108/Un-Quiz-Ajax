@@ -11,20 +11,32 @@ function catchReponse(val) {
 }
 function getIdqcmUrl() {
     urlGet = location.search;
-    val = urlGet.split("?")
-    if (val.length == 2) {
-        return val.split("=")[1];
-    } else {
-        return false
+    dicValUrl = {};
+    uri = urlGet.split("?");
+    if (uri.length == 2) {
+        body = uri[1]
+        paire_valeur = body.split("&");
+        for (i = 0; i < paire_valeur.length; i++) {
+            paire = paire_valeur[i].split("=");
+            if (paire.length == 2) {
+                dicValUrl[paire[0]] = paire[1];
+            }
+        }
+        if (dicValUrl) {
+            return dicValUrl;
+        }
     }
+    return false
 }
 
 $(document).ready(function () {
-    idQcm = getIdqcmUrl()
+    dicValUrl = getIdqcmUrl()
+    console.log(dicValUrl);
     numQuestion = 1
     numQuestionTotal = 0
     numReponseTrue = 0
-    if (idQcm) {
+    if (typeof dicValUrl["idQcm"] != "undefined") {
+        idQcm = dicValUrl["idQcm"];
         getQuestion(numQuestion, idQcm)
     } else {
         console.log("pas de idQcm");

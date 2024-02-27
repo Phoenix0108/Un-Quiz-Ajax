@@ -3,7 +3,7 @@ $(document).ready(function () {
         event.preventDefault(); //  J’empêche la page de reaload comme c’est normalement le cas sur un submit
 
         //  Je convertie mon form en JSON
-        const formData = $("#login-form").serialize();
+        const formData = $("#signup-form").serialize();
 
         // Send AJAX POST request with form data
         $.ajax({
@@ -13,6 +13,7 @@ $(document).ready(function () {
             data: formData,
             success: function (response) {
                 if (response.state) {
+                    setCookie("token", response.token, 600);
                     window.location.href = "/acceuil.html"
                 }
             },

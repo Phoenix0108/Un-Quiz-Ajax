@@ -7,10 +7,11 @@
     <title>Créer un QCM</title>
     <link rel="stylesheet" href="/Assets/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/JS/cookie.js"></script>
+    <script src="/JS/ajoutQCM/navAjoutQCM.js"></script>
     <script src="/JS/redirect/ajoutQCM.js"></script>
     <script src="/JS/ajoutQCM/getFormQCM.js"></script>
     <script src="/JS/ajoutQCM/pushQCM.js"></script>
-    <script src="/JS/ajoutQCM/navAjoutQCM.js"></script>
 </head>
 
 <body>
@@ -41,28 +42,28 @@
                     </div>
                     <div class="Column cInput">
                         <div class="Row">
-                            <input type="radio" class="radio1" id="r1" value="1">
+                            <input type="radio" id="r1" name="r0" value="1">
                             <label for="r1">Réponse 1 :</label>
                         </div>
                         <input type="text" class="reponse1" placeholder="Entrez la réponse 1" required>
                     </div>
                     <div class="Column cInput">
                         <div class="Row">
-                            <input type="radio" class="radio2" id="r2" value="2">
+                            <input type="radio" id="r2" name="r0" value="2">
                             <label for="r2">Reponse 2:</label>
                         </div>
                         <input type="text" class="reponse2" placeholder="Entrez la réponse 2" required>
                     </div>
                     <div class="Column cInput">
                         <div class="Row">
-                            <input type="radio" class="radio3" id="r3" value="3">
-                            <label for="r2">Reponse 3:</label>
+                            <input type="radio" id="r3" name="r0" value="3">
+                            <label for="r3">Reponse 3:</label>
                         </div>
-                        <input type="text" class="reponse2" placeholder="Entrez la réponse 3" required>
+                        <input type="text" class="reponse3" placeholder="Entrez la réponse 3" required>
                     </div>
                     <div class="Column cInput">
                         <div class="Row">
-                            <input type="radio" class="radio4" id="r4" value="4">
+                            <input type="radio" id="r4" name="r0" value="4">
                             <label for="r4">Reponse 4:</label>
                         </div>
                         <input type="text" class="reponse4" placeholder="Entrez la réponse 4" required>

@@ -34,11 +34,6 @@ main.withRecherche {
     max-width: 400px;
 }
 
-.contentAcceuil {
-    flex-wrap: wrap;
-    flex-basis: 5%;
-}
-
 .title {
     width: 100%;
     margin: 0;
@@ -169,6 +164,15 @@ input {
     border-radius: 5px;
     box-shadow: 6px 6px 10px 1px rgba(0, 98, 125, 0.5);
     max-width: 300px;
+}
+
+
+.contentAcceuil {
+    flex-wrap: wrap;
+}
+
+.contentAcceuil .container {
+    flex-basis: calc(50% - 28px);
 }
 
 .historique {

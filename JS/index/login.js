@@ -13,6 +13,7 @@ $(document).ready(function () {
             data: formData,
             success: function (response) {
                 if (response.state) {
+                    setCookie("token", response.token, 600)
                     window.location.href = "/acceuil.html"
                 }
             },

@@ -7,8 +7,10 @@ $(document).ready(function () {
             dataType: "text",
             data: { "nbrFormQCM": nbrFormQCM },
             success: function (reponse) {
-                if (reponse.state) {
-                    $("#divForm").append(reponse.data);
+                if (reponse) {
+                    $("#divForm").append(reponse);
+                    indexForm = $(".form").length - 1;
+                    changeForm();
                 }
             },
             error: function (xhr) {
