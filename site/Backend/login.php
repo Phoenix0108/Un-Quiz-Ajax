@@ -1,9 +1,12 @@
 <?php
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Credentials: true");
+
 // Inclure le fichier de connexion à la base de données
 include __DIR__."/../include/db_connect.php"; 
-
-// Autoriser l'accès depuis n'importe quel origine
-header("Access-Control-Allow-Origin: *");
 
 // Définir le type de contenu pour la réponse JSON
 header("Content-Type: application/json");
