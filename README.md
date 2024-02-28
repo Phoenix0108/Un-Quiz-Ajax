@@ -18,7 +18,7 @@ Un outil web pour créer et répondre à des QCM de manière simple et intuitive
 
 ## Installation
 
-1. Cloner le repository : `git clone https://github.com/ton-nom-utilisateur/Un-Quiz-Ajax.git`
+1. Cloner le repository : `git clone https://github.com/Phoenix0108/Un-Quiz-Ajax.git`
 2. Installer les dépendances : `npm install`
 
 ## Configuration
@@ -27,9 +27,7 @@ Un outil web pour créer et répondre à des QCM de manière simple et intuitive
 
 ## Utilisation
 
-1. Lancez l'application frontend : `npm start`
-2. Lancez le serveur backend : `node server.js`
-3. Accédez à l'application via le navigateur à l'adresse http://localhost:3000
+https://phoenix0108.github.io/Un-Quiz-Ajax/site/index.html
 
 ## Authentification
 
