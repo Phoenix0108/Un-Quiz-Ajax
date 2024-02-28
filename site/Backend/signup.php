@@ -1,10 +1,12 @@
 <?php
+
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type");
+    header("Access-Control-Allow-Credentials: true");
+
     // Inclusion du fichier de connexion à la base de données
     include __DIR__."/../include/db_connect.php";
-
-    // Autorisation d'accès depuis n'importe quelle origine
-    header("Access-Control-Allow-Origin: *");
-    header("Content-Type: application/json");
 
     // Récupération des données du formulaire
     $nom = htmlspecialchars($_POST["nom"]);
