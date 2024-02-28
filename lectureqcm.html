@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="/Assets/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/JS/cookie.js"></script>
-    <script src="/JS/lectureQCM/lectureqcm.js"></script>
-    <script src="/JS/lectureQCM/pushReponse.js"></script>
+    <script src="/JS/lectureQCM/getUrl.js"></script>
     <script src="/JS/lectureQCM/getQuestion.js"></script>
+    <script src="/JS/lectureQCM/pushReponse.js"></script>
+    <script src="/JS/lectureQCM/getResultat.js"></script>
     <script src="/JS/redirect/lectureQCM.js"></script>
+    <script src="/JS/lectureQCM/init.js"></script>
 </head>
 
 <body>
@@ -20,7 +22,7 @@
     </nav>
     <main class="withNav">
         <div id="divQcm" class="Column">
-            <span id="indexQuestion">N° de la question 1/4</span>
+            <span>N° de la question <span id="numQuestion">1</span>/<span id="numQuestionTotal">4</span></span>
             <div class="container Column">
                 <span class="title" id="question">La question est ...?</span>
                 <div class="Row divBtnChoix">
@@ -44,11 +46,15 @@
             <button id="btnSuivant" class="blue none">Suivant</button>
             <button id="btnResultat" class="blue none">Afficher les résultats</button>
         </div>
-        <div id="divResultat" class="none">
-            <div class="content">
-                <span id="score">Votre Score est de 8/20</span>
+        <div class="Column none" id="divResultat">
+            <div class="container Column">
+                <div class="Row">
+                    <span>Votre score est de</span>
+                    <span class="note" id="score">8/20</span>
+                </div>
+                
             </div>
-            <button id="retourAcceuil">Retour à l'acceuil</button>
+            <button id="retourAcceuil" class="blue">Retour à l'acceuil</button>
         </div>
 
     </main>

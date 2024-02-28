@@ -4,9 +4,8 @@ include "requeteExpress.php";
 $allowOrigin = "http://localhost";
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
-if(isset($_POST["token"]) && isset($_POST["idQcm"]) && isset($_POST["numQuestion"]) && isset($_POST["reponse"])){
+if(isset($_POST["token"]) && isset($_POST["numQuestion"]) && isset($_POST["reponse"]) && isset($_POST["idQcm"])){
     $token = htmlspecialchars($_POST["token"]);
-    $idQcm = htmlspecialchars($_POST["idQcm"]);
     $numQuestion = htmlspecialchars($_POST["numQuestion"]);
     $reponse = htmlspecialchars($_POST["reponse"]);
     //On récupère l'id de l'utilisateur
@@ -18,6 +17,7 @@ if(isset($_POST["token"]) && isset($_POST["idQcm"]) && isset($_POST["numQuestion
     if($user->num_rows == 1){
         $user = $user->fetch_assoc();
         // On récupère les question du QCM
+        $idQcm = htmlspecialchars($_POST["idQcm"]);
         $request = $db->prepare("SELECT * FROM question WHERE idqcm = ?");
         $request->bind_param("i", $idQcm);
         $request->execute();
@@ -59,6 +59,11 @@ if(isset($_POST["token"]) && isset($_POST["idQcm"]) && isset($_POST["numQuestion
                     "id_user"=>$user['id'],
                     "id_note"=>false
                 ];
+                if(isset($_POST["idHistorique"])){
+                    //Dans le cas ou on reprend un QCM est en cours
+                    $idHistorique = htmlspecialchars($_POST["idHistorique"]);
+                    $dataExpress["id_note"] = $idHistorique;
+                }
                 $resultatExpress = requeteExpress("getProgression", $dataExpress);
                 if($numQuestion == $resultatExpress["nbr_reponseRepondu"]+1){
                     //vérifie si le numéro de la reponse qu'on veut enregistrer est la suite des reponses enregistrées
@@ -92,8 +97,7 @@ if(isset($_POST["token"]) && isset($_POST["idQcm"]) && isset($_POST["numQuestion
                     $resultatExpress = requeteExpress("updateProgression", $dataExpress);
                 }else{
                     $data = ["state"=>false, "reponse"=>"numéro question n'est pas consécutif"];
-                }
-                
+                } 
             }
             echo json_encode($data);
         }

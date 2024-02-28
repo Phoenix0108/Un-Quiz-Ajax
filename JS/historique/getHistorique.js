@@ -6,7 +6,11 @@ if(typeof cookie['token'] != "undefined"){
         daaType: "text",
         data: {"token": cookie['token']},
         success: function (data) {
-            $("main").html(data);
+            if(data){
+                $("main").html(data);
+            }else{
+                $("main").html("<h3>Pas d'hitorique</h3>");
+            }
         },
         error: function (xhr) {
             if (xhr.status == 0) {

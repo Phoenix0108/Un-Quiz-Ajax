@@ -46,7 +46,7 @@ if(isset($_POST["token"])){
                         <span>Date : '.($note["date"]).'</span>
                     </div>
                     <div class="Row">
-                        <button type="button" class="green" onclick="reprendreQCM('.($note["id"]).')">Reprendre</button>
+                        <button type="button" class="green" onclick="reprendreQCM('.($note["id"]).','.$note["idqcm"].')">Reprendre</button>
                         <button type="button" class="red" onclick="supQCM('.($note["id"]).')">Supprimer</button>
                     </div>
                 </div>';

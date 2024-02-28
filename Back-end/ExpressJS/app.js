@@ -37,7 +37,7 @@ app.post("/saveState", (req, res) => {
 
 app.post("/getProgression", (req, res) => {
     const body = req.body;
-    query = "SELECT * FROM note WHERE idqcm = ? AND id_user = ?";
+    query = "SELECT * FROM note WHERE idqcm = ? AND id_user = ? ORDER BY id DESC LIMIT 1";
     value = [body.idqcm, body.id_user];
     if(body.id_note){
         query = "SELECT * FROM note WHERE idqcm = ? AND id_user = ? AND id = ?";
@@ -48,7 +48,7 @@ app.post("/getProgression", (req, res) => {
             console.log(err);
         }else{
             console.log("requete reussi");
-            res.json(result[result.length-1]);
+            res.json(result[0]);
         }
     });
 });
@@ -93,6 +93,27 @@ app.post("/supNote", (req, res)=>{
             console.log("requete reussi");
         }
         res.send();
+    });
+});
+
+app.post("/getResultat", (req, res)=>{
+    const body = req.body;
+    console.log(body);
+    if(typeof body.idQcm != "undefined"){
+        query = "SELECT * FROM note WHERE id_user = ? AND idqcm = ? ORDER BY id DESC LIMIT 1";
+        value = [body.id_user, body.idQcm];
+    }else{
+        if(typeof body.idHistorique != "undefined"){
+        query = "SELECT * FROM note WHERE id_user = ? AND id = ?";
+        value = [body.id_user, body.idHistorique];
+        }
+    }
+    connection.execute(query, value, (err, result)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.json(result[0]);
+        }
     });
 });
 

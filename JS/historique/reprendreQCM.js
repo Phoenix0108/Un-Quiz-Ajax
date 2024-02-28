@@ -1,3 +1,3 @@
-function reprendreQCM(idQcm, idHistorique) {
-    window.location.href = "/lectureqcm?idHistorique=" + idHistorique
+function reprendreQCM(idHistorique,idQcm) {
+    window.location.href = "/lectureqcm.html?idQcm="+idQcm+"&idHistorique=" + idHistorique
 }
