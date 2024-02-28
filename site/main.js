@@ -11,7 +11,7 @@ $(document).ready(function () {
     })
     $("#submitLogin").click(function () {
         $.ajax({
-            url: "http://127.0.0.1/Backend/login",
+            url: "https://phoenix0108.github.io/backend/Backend/login",
             type: "POST",
             dataType: "json",
             data: {
@@ -29,7 +29,7 @@ $(document).ready(function () {
     })
     $("#submitSignup").click(function () {
         $.ajax({
-            url: "http://127.0.0.1/Backend/signup",
+            url: "https://phoenix0108.github.io/backend/Backend/signup",
             type: "POST",
             dataType: "json",
             data: {
