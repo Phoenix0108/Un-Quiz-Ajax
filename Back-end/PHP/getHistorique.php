@@ -27,16 +27,25 @@ if(isset($_POST["token"])){
             $request->execute();
             $qcm = $request->get_result();
             $nbr_ligne = $qcm->num_rows;
-            $qcm = $qcm->fetch_assoc();
+            if($nbr_ligne>0){
+                $qcm = $qcm->fetch_assoc();
+                $nom = $qcm["nom"];
+                $questionRestante = $nbr_ligne - $note["nbr_reponseRepondu"];
+                $buttonReprendre = '<button type="button" class="green" onclick="reprendreQCM('.($note["id"]).','.$note["idqcm"].')">Reprendre</button>';
+            }else{
+                $nom = "Plus disponible";
+                $questionRestante = "Inconnu";
+                $buttonReprendre ='';
+            }
             if($note["en_cours"] == 1){
                 //Le QCM n'est pas fini
                 echo '
                 <div class="container Column historique">
                     <div class="Row sp_btw">
                         <div>
-                            <h3 class="title">'.($qcm["nom"]).'</h3>
+                            <h3 class="title">'.($nom).'</h3>
                         </div>
-                        <span class="note">Question restante:'.($nbr_ligne - $note["nbr_reponseRepondu"]).'</span>
+                        <span class="note">Question restante:'.($questionRestante).'</span>
                     </div>
                     <div class="Column cInput">
                         <span>Code de partage : #'.($note["idqcm"]).'</span>
@@ -45,8 +54,8 @@ if(isset($_POST["token"])){
                     <div class="Row end">
                         <span>Date : '.($note["date"]).'</span>
                     </div>
-                    <div class="Row">
-                        <button type="button" class="green" onclick="reprendreQCM('.($note["id"]).','.$note["idqcm"].')">Reprendre</button>
+                    <div class="Row">'.($buttonReprendre).'
+                        
                         <button type="button" class="red" onclick="supQCM('.($note["id"]).')">Supprimer</button>
                     </div>
                 </div>';
@@ -55,7 +64,7 @@ if(isset($_POST["token"])){
                 <div class="container Column historique">
                     <div class="Row sp_btw">
                         <div>
-                            <h3 class="title">Athèle</h3>
+                            <h3 class="title">'.($nom).'</h3>
                         </div>
                         <span class="note">Note '.($note["nbr_reponseTrue"])."/".($note["nbr_reponseRepondu"]).'</span>
                     </div>

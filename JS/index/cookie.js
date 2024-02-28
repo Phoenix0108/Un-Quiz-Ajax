@@ -24,8 +24,3 @@ function setCookie(name, value, s = 0) {
     }
 }
 cookie = getCookie();
-if (typeof cookie["token"] != "undefined") {
-    setCookie("token", cookie["token"], 600);
-}else{
-    window.location.href = 'index.html'
-}

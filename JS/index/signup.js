@@ -15,6 +15,8 @@ $(document).ready(function () {
                 if (response.state) {
                     setCookie("token", response.token, 600);
                     window.location.href = "acceuil.html"
+                }else{
+                    $(".stateCo").html(response.reponse)
                 }
             },
             error: function (xhr) {

@@ -17,7 +17,7 @@ function pushReponse() {
         nbrInfos = 3;
         data = {
             "reponse": reponse,
-            "numQuestion": numQuestion,
+            "numQuestion": $("#numQuestion").html(),
             "token": cookie["token"]
         }
         if(typeof url["idQcm"] != "undefined"){
