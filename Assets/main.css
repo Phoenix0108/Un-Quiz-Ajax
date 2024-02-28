@@ -79,10 +79,6 @@ input[type="submit"] {
     background-image: url("/Un-Quiz-Ajax/Assets/Icon-RETOUR.png");
 }
 
-#recherche {
-    width: 400px
-}
-
 .nav-fleche button {
     background-image: url("/Un-Quiz-Ajax/Assets/fleche.png");
 }
