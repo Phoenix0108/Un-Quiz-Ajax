@@ -1,9 +1,3 @@
-if ($_SERVER['REQUEST_METHOD'] == 'OPTION') {
-    http_response_code(200);
-    exit;
-}
-
-
 $(document).ready(function () {
     $(".btnFlexForm").click(function () {
         $(".signup-form").toggle()
