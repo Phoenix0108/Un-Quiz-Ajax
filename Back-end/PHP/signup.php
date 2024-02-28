@@ -30,4 +30,5 @@ if(isset($_POST["signup_name"]) && isset($_POST["signup_email"]) && isset($_POST
     }
     echo json_encode($data);
 }
+$db->close();
 ?>

@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/JS/cookie.js"></script>
     <script src="/JS/redirect/historique.js"></script>
     <script src="/JS/historique/getHistorique.js"></script>
     <script src="/JS/historique/reprendreQCM.js"></script>
-    <script src="/JS/historique/supQCM.js"></script>
+    <script src="/JS/historique/supHistorique.js"></script>
     <link rel="stylesheet" href="Assets/main.css">
 </head>
 
@@ -34,7 +35,7 @@
             <div class="Row end">
                 <span>Date : 12/01/2024</span>
             </div>
-            <button class="red" onclick="supQCM()">Supprimer</button>
+            <button type="button" class="red" onclick="supQCM()">Supprimer</button>
         </div>
         <div class="container Column historique">
             <div class="Row sp_btw">
@@ -51,8 +52,8 @@
                 <span>Date : 12/01/2024</span>
             </div>
             <div class="Row">
-                <button class="green" onclick="reprendreQCM()">Reprendre</button>
-                <button class="red" onclick="supQCM()">Supprimer</button>
+                <button type="button" class="green" onclick="reprendreQCM()">Reprendre</button>
+                <button type="button" class="red" onclick="supQCM()">Supprimer</button>
             </div>
         </div>
     </main>

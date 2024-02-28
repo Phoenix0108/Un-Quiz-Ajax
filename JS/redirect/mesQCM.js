@@ -13,9 +13,10 @@ function supp(id) {
                 "token": cookie["token"]
             },
             success: function () {
-                location.reload(true)
+                
             }
         });
+        location.reload(true)
     } else {
         console.log("pas connecter")
     }

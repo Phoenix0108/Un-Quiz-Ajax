@@ -12,7 +12,7 @@ $reponse = '<form class="form Column">
 </div>
 <div class="Column cInput">
     <div class="Row">
-        <input type="radio" id="r'.($numPage*4+1).'1" name="r'.($numPage).'" value="1">
+        <input type="radio" id="r'.($numPage*4+1).'" name="r'.($numPage).'" value="1">
         <label for="r'.($numPage*4+1).'">Réponse 1 :</label>
     </div>
     <input type="text" class="reponse1" placeholder="Entrez la réponse 1" required>

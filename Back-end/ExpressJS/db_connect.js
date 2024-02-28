@@ -6,7 +6,7 @@ const initDB = () => {
         port: 3306,
         user: "root",
         password: "",
-        database: "laragon"
+        database: "express"
     });
 
     connection.connect(error => {
