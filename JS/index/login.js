@@ -14,7 +14,7 @@ $(document).ready(function () {
             success: function (response) {
                 if (response.state) {
                     setCookie("token", response.token, 600)
-                    window.location.href = "/acceuil.html"
+                    window.location.href = "acceuil.html"
                 }
             },
             error: function (xhr) {
