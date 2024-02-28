@@ -27,7 +27,7 @@ Un outil web pour créer et répondre à des QCM de manière simple et intuitive
 
 ## Utilisation
 
-https://phoenix0108.github.io/Un-Quiz-Ajax/site/index.html
+https://phoenix0108.github.io/Un-Quiz-Ajax/
 
 ## Authentification
 
