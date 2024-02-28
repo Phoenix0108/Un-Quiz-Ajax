@@ -5,7 +5,7 @@ $(document).ready(function () {
     })
     $("#submitLogin").click(function () {
         $.ajax({
-            url: "https://phoenix0108.github.io/backend/Backend/login",
+            url: "http://127.0.0.1/Backend/login",
             type: "POST",
             dataType: "json",
             data: {
@@ -23,7 +23,7 @@ $(document).ready(function () {
     })
     $("#submitSignup").click(function () {
         $.ajax({
-            url: "https://phoenix0108.github.io/backend/Backend/signup",
+            url: "http://127.0.0.1/Backend/signup",
             type: "POST",
             dataType: "json",
             data: {
