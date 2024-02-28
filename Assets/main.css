@@ -76,7 +76,7 @@ input[type="submit"] {
 }
 
 #btnRetour {
-    background-image: url("/Assets/Icon-RETOUR.png");
+    background-image: url("Assets/Icon-RETOUR.png");
 }
 
 #recherche {
@@ -84,7 +84,7 @@ input[type="submit"] {
 }
 
 .nav-fleche button {
-    background-image: url("/Assets/fleche.png");
+    background-image: url("Assets/fleche.png");
 }
 
 #Avant {
